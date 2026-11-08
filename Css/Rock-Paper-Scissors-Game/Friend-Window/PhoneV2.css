@@ -1,0 +1,88 @@
+@media (max-width:480px){
+  * {
+  font-family: Cairo;
+  color: #fff;
+}
+
+body {
+  background-image: url("../../img/RPS.jpg");
+  background-size: cover;
+  width: 90%;
+  height: 90vh;
+  margin: 20px auto;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+
+}
+
+.game-screen {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.game-screen .title {
+    font-size: 36px;
+    color: #ffffff;
+    text-shadow: 
+        -3px -3px 0 #1d3557, 
+        3px -3px 0 #1d3557, 
+        -3px 3px 0 #1d3557, 
+        3px 3px 0 #1d3557, 
+        0 8px 0 #0d1b2a;
+    line-height: 1.1;
+    margin-bottom:50px ;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 50px;
+}
+
+.game-screen .title span {
+  color: #ecae3a;
+  
+}
+
+.play-btn {
+   background: linear-gradient(to bottom, #ffcf33, #f5a100);
+    border: 4px solid #ffffff;
+    border-radius: 40px;
+    padding: 12px 60px;
+    font-size: 20px;
+    font-weight: 900;
+    width: 20%;
+    display: flex;
+    justify-content: center;
+    height: 70px;
+    color: #4a2800;
+    cursor: pointer;
+    box-shadow: 0 8px 0 #b36b00;
+    transition: transform 0.1s;
+    margin-bottom: 58px;
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.play-btn:active {
+    transform: translateY(2px);
+    box-shadow: 0 4px 0 #b36b00;
+}
+
+.play-icon {
+    background: white;
+    border-radius: 50%;
+    width: 35px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    color: #f5a100;
+}
+  
+}

@@ -1,0 +1,243 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary: #287cff;
+    --primary-dark: #1459dc;
+    --navy: #263f96;
+    --text: #183775;
+    --muted: #7285a5;
+    --border: #d5e7ff;
+    --background: #f2f8ff;
+    --white: #ffffff;
+}
+
+body {
+    font-family: "Cairo", sans-serif;
+    min-height: 70vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 15px 18px;
+    color: var(--text);
+
+    background:
+        radial-gradient(
+            circle at 10% 10%,
+            #d4e8ff 0,
+            transparent 28%
+        ),
+        radial-gradient(
+            circle at 90% 90%,
+            #dbeaff 0,
+            transparent 28%
+        ),
+        linear-gradient(135deg, #f9fcff, #edf6ff);
+}
+
+
+.game-container {
+    width: 100%;
+    height: 100vh;
+    max-width: 850px;
+    text-align: center;
+}
+
+
+
+.game-header {
+    margin-bottom: 8px;
+}
+
+.game-icons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.game-header h1 {
+    display: inline-block;
+    background: linear-gradient(120deg, #3049a5, #253a8b);
+    color: var(--white);
+    padding: 12px 18px;
+    border-radius: 28px;
+    font-size: 30px;
+    font-weight: 800;
+    box-shadow: 0 10px 25px #263f9625;
+}
+
+
+.game-card {
+    background: #ffffffb8;
+    border: 2px solid var(--border);
+    border-radius: 28px;
+    padding: 28px;
+    box-shadow: 0 15px 40px #3678c20c;
+    backdrop-filter: blur(10px);
+}
+
+.game-card h2 {
+    font-size: 25px;
+    margin-bottom: 22px;
+    font-weight: 800;
+}
+
+/* =========================
+   خيارات اللعب
+========================= */
+
+.mode-options {
+    display: flex;
+    flex-direction: column;
+    gap: 17px;
+}
+
+.mode-option {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    text-align: right;
+    min-height: 110px;
+    padding: 18px 22px;
+    border: 2px solid #d4e5fa;
+    border-radius: 22px;
+    background: var(--white);
+    cursor: pointer;
+    transition: 0.25s ease;
+}
+
+.mode-option:hover {
+    border-color: var(--muted);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 22px #287cff15;
+}
+
+.mode-option:active {
+    border-color: var(--primary);
+}
+
+.mode-option.selected {
+    border-color: var(--primary);
+    background: #edf5ff;
+}
+
+/* إخفاء دائرة الاختيار الأصلية */
+
+.mode-option input {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+}
+
+/* دائرة الاختيار */
+
+.radio-circle {
+    width: 25px;
+    height: 25px;
+    flex-shrink: 0;
+    border: 3px solid #899bb8;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.mode-option.selected .radio-circle {
+    border-color: var(--primary);
+}
+
+.mode-option.selected .radio-circle::after {
+    content: "";
+    width: 13px;
+    height: 13px;
+    border-radius: 50%;
+    background: var(--primary);
+}
+
+/* أيقونة الوضع */
+
+.mode-icon {
+    width: 76px;
+    height: 76px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #e0edff;
+    border-radius: 50%;
+    font-size: 37px;
+}
+
+
+.mode-text strong {
+    font-size: 20px;
+    font-weight: 800;
+}
+
+
+.game-actions {
+    display: flex;
+    gap: 18px;
+    margin-top: 25px;
+}
+
+.btn {
+    flex: 1;
+    min-height: 75px;
+    padding: 15px 20px;
+    border-radius: 50px;
+    font-family: inherit;
+    font-size: 17px;
+    font-weight: 800;
+    cursor: pointer;
+    margin-top: -8px;
+    transition: 0.25s ease;
+}
+
+.btn span {
+    margin-left: 8px;
+    font-size: 22px;
+}
+
+.btn-start {
+    color: var(--white);
+    border: 2px solid var(--primary-dark);
+    background: linear-gradient(135deg, #328bff, #1766ef);
+    box-shadow: 0 8px 20px #287cff30;
+}
+
+.btn-start:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 25px #287cff45;
+}
+
+.btn-start:active {
+    transform: scale(0.97);
+}
+
+.btn-back {
+    color: #52698d;
+    background: #ffffffa8;
+    border: 2px solid #93a9c8;
+}
+
+.btn-back:hover {
+    background: #e7f0ff;
+    border-color: #6688bb;
+    transform: translateY(-3px);
+}
+
+.btn-back:active {
+    transform: scale(0.97);
+}
+
+
+.footer-note {
+    margin-top: 10px;
+    font-size: 14px;
+    color: #8496b3;
+}

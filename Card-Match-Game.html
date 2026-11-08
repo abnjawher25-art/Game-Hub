@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" href="Icons/WebLogo.png">
+  <title>Card Match | Game</title>
+  <link rel="stylesheet" href="Css/Card-Match-Game/Game-Window/PC.css" media="(max-width:5000px)">
+  <link rel="stylesheet" href="Css/Card-Match-Game/Game-Window/Laptop.css" media="(max-width:1200px)">
+  <link rel="stylesheet" href="Css/Card-Match-Game/Game-Window/Taplet.css" media="(max-width:992px)">
+  <link rel="stylesheet" href="Css/Card-Match-Game/Game-Window/SmartPhone.css" media="(max-width:720px)">
+  <link rel="stylesheet" href="Css/Card-Match-Game/Game-Window/PhoneV2.css" media="(max-width:480px)">
+</head>
+<body>
+  <div class="game-container">    
+    <div class="header">
+      <div class="controls">
+        <button id="restart-btn">إعادة اللعب</button>
+        <button id="end-btn">إنهاء اللعبة</button>
+      </div>   
+      <div class="stats">
+        <div class="stat-item">المحاولات الفاشلة: <span id="wrong-attempts">0</span></div>
+        <div class="stat-item">الوقت: <span id="timer">00:00</span></div>
+      </div>
+    </div>
+    <div class="memory-game" id="memory-game">      
+    </div>
+  </div>
+  <div class="overlay" id="overlay">
+    <div class="modal">
+      <h2 id="modal-title">تهانينا! </h2>
+      <p id="modal-message">لقد أتممت اللعبة بنجاح.</p>
+      <button id="modal-restart-btn">لعب مرة أخرى</button>
+    </div>
+  </div>
+  <script src="Js/Card-Match-Game-Window.js"></script>
+</body>
+</html>
+

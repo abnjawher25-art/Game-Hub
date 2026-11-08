@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="Icons/WebLogo.png">
+    <title>Clicker Speed | Game</title>
+    <link rel="stylesheet" href="Css/Clicher-Speed-Game/Game-Window/PC.css" media="(max-width:5000px)">
+    <link rel="stylesheet" href="Css/Clicher-Speed-Game/Game-Window/Laptop.css" media="(max-width:1200px)">
+    <link rel="stylesheet" href="Css/Clicher-Speed-Game/Game-Window/taplet.css" media="(max-width:992px)">
+    <link rel="stylesheet" href="Css/Clicher-Speed-Game/Game-Window/SmartPhone.css" media="(max-width:720px)">
+    <link rel="stylesheet" href="Css/Clicher-Speed-Game/Game-Window/PhoneV2.css" media="(max-width:480px)">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet">
+</head>
+<body>
+  <main class="game">
+    <h1>CLICKER <span>SPEED</span></h1>
+
+    <section class="stats" aria-label="إحصائيات اللعبة">
+      <div class="stat">
+        <span class="label">الوقت المتبقي</span>
+        <strong class="value" id="timer">05:00</strong>
+      </div>
+      <div class="stat">
+        <span class="label">المستوى</span>
+        <strong class="value" id="level">1 / 5</strong>
+      </div>
+      <div class="stat">
+        <span class="label">النقرات المطلوبة</span>
+        <strong class="value" id="required">500</strong>
+      </div>
+    </section>
+
+    <div class="counter-label">عدد النقرات</div>
+    <div id="count" aria-live="polite">0</div>
+
+    <button id="click-btn" type="button">اضغط</button>
+
+    <div class="progress" role="progressbar" aria-label="تقدم المستوى"
+         aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+      <div id="bar"></div>
+    </div>
+    <p id="message" aria-live="polite">اضغط لبدء اللعب!</p>
+  </main>
+
+  
+<div class="game-actions">
+    <button id="restart-btn" type="button">🔄 إعادة اللعبة</button>
+    <button id="exit-btn" type="button">🏠 خروج</button>
+</div>
+
+    <script src="Js/Clicker-Speed-Game-Window.js" defer></script>
+</body>
+</html>

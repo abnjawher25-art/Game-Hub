@@ -1,0 +1,175 @@
+@media (max-width: 920px){
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 20px;
+  background: #080d1b;
+  color: #f5f7ff;
+  font-family: Tahoma, Arial, sans-serif;
+}
+
+.game {
+  width: 96%;
+  height: 80vh;
+  text-align: center;
+  background: #111a2e;
+  border: 1px solid #263552;
+  border-radius: 24px;
+  padding: 26px 22px;
+  box-shadow: 0 20px 60px #0006;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+h1 {
+  margin: 0 0 15px;
+  font-size: 60px;
+  letter-spacing: 2px;
+}
+
+h1 span {
+  color: #42e8f5;
+}
+
+.stats {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+  margin-bottom: 28px;
+}
+
+.stat {
+  background: #1b2842;
+  border-radius: 14px;
+  padding: 12px 5px;
+}
+
+.label {
+  display: block;
+  color: #aab8d3;
+  font-size: 12px;
+  margin-bottom: 2px;
+}
+
+.value {
+  font-size: 18px;
+  font-weight: 900;
+}
+
+.counter-label {
+  color: #f5f5fd;
+  font-size: 30px;
+  margin-top: -18px;
+}
+
+#count {
+  font-size: 50px;
+  font-weight: 900;
+  margin: 0 0 10px;
+  color: #fff;
+}
+
+#click-btn {
+  width: 150px;
+  height: 150px;
+  border: 0;
+  border-radius: 50%;
+  background: linear-gradient(145deg, #48edf5, #5779ff);
+  color: #071126;
+  font-size: 32px;
+  font-weight: 900;
+  cursor: pointer;
+  box-shadow: 0 10px 0 #293ea0, 0 0 36px #43dff555;
+  transition: transform 0.08s;
+}
+
+#click-btn:active {
+  transform: translateY(6px);
+  box-shadow: 0 4px 0 #293ea0, 0 0 24px #43dff555;
+}
+
+#click-btn:disabled {
+  cursor: not-allowed;
+}
+
+.progress {
+  height: 9px;
+  background: #263552;
+  border-radius: 20px;
+  overflow: hidden;
+  margin-top: 28px;
+}
+
+#bar {
+  height: 100%;
+  width: 0;
+  background: #42e8f5;
+  transition: width 0.15s;
+}
+
+#message {
+  min-height: 24px;
+  color: #42e8f5;
+  margin: 15px 0 0;
+  font-size: 14px;
+}
+
+@media (max-width: 360px) {
+  .game {
+    padding: 22px 14px;
+  }
+
+  .value {
+    font-size: 19px;
+  }
+
+  .label {
+    font-size: 11px;
+  }
+}
+
+
+.game-actions {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 20px;
+    flex-wrap: wrap;
+}
+
+.game-actions button {
+    padding: 12px 20px;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+#restart-btn {
+    background: #22c55e;
+    color: white;
+}
+
+#exit-btn {
+    background: #ef4444;
+    color: white;
+}
+
+.game-actions button:hover {
+    transform: translateY(-2px);
+    filter: brightness(1.1);
+}
+
+
+}

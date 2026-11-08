@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="Icons/WebLogo.png">
+    <title>ROCK PAPER SCISSORS | Game</title>
+    <link rel="stylesheet" href="Css/Rock-Paper-Scissors-Game/Game-style/PC-style.css" media="(max-width:5000px)">
+    <link rel="stylesheet" href="Css/Rock-Paper-Scissors-Game/Game-style/Laptop-style.css" media="(max-width:1200px)">
+    <link rel="stylesheet" href="Css/Rock-Paper-Scissors-Game/Game-style/taplet-style.css" media="(max-width:992px)">
+    <link rel="stylesheet" href="Css/Rock-Paper-Scissors-Game/Game-style/SmartPhone-style.css" media="(max-width:720px)">
+    <link rel="stylesheet" href="Css/Rock-Paper-Scissors-Game/Game-style/PhoneV2-style.css" media="(max-width:480px)">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Background decorative floating elements -->
+    <i class="fa-solid fa-hand-fist bg-shape text-6xl text-blue-800 top-10 right-10 rotate-12"></i>
+    <i class="fa-solid fa-hand bg-shape text-7xl text-blue-800 bottom-12 left-12 -rotate-12"></i>
+    <i class="fa-solid fa-hand-scissors bg-shape text-6xl text-blue-800 top-1/3 left-8 rotate-45"></i>
+    <i class="fa-solid fa-trophy bg-shape text-8xl text-blue-800 bottom-1/4 right-8 -rotate-6"></i>
+
+    <!-- Tablet Container -->
+    <div class="tablet-frame w-full max-w-4xl bg-gradient-to-b from-blue-50 to-sky-100 p-6 md:p-10 relative overflow-hidden">
+        
+        <!-- Header & Title -->
+        <header class="text-center mb-6">
+            <h1 class="text-3xl md:text-4xl font-black text-sky-900 drop-shadow-sm tracking-wide">
+                لعبة حجرة - ورقة - مقص
+            </h1>
+            <p class="text-sky-700 text-sm md:text-base font-semibold mt-1">
+                اختر إحدى البطاقات لتحدي الكمبيوتر!
+            </p>
+        </header>
+
+        <!-- Score Board Area -->
+        <div class="grid grid-cols-2 md:grid-cols-3 gap-4 mb-8 bg-white/70 backdrop-blur-md p-4 rounded-2xl shadow-inner border border-white">
+            <!-- Player Score -->
+            <div class="flex items-center justify-center gap-3 bg-white p-3 rounded-xl shadow-sm border border-sky-100">
+                <div class="w-10 h-10 rounded-full bg-orange-500 text-white flex items-center justify-center text-lg font-bold">
+                    <i class="fa-solid fa-user"></i>
+                </div>
+                <div>
+                    <div class="text-xs text-slate-500 font-bold">لاعب</div>
+                    <div id="player-score" class="text-2xl font-black text-slate-800">0</div>
+                </div>
+            </div>
+
+            <!-- Ties Counter (Hidden on smallest screens) -->
+            <div class="hidden md:flex items-center justify-center gap-3 bg-white p-3 rounded-xl shadow-sm border border-sky-100">
+                <div class="w-10 h-10 rounded-full bg-slate-400 text-white flex items-center justify-center text-lg font-bold">
+                    <i class="fa-solid fa-handshake"></i>
+                </div>
+                <div>
+                    <div class="text-xs text-slate-500 font-bold">تعادل</div>
+                    <div id="ties-score" class="text-2xl font-black text-slate-800">0</div>
+                </div>
+            </div>
+
+            <!-- Computer Score -->
+            <div class="flex items-center justify-center gap-3 bg-white p-3 rounded-xl shadow-sm border border-sky-100">
+                <div class="w-10 h-10 rounded-full bg-cyan-500 text-white flex items-center justify-center text-lg font-bold">
+                    <i class="fa-solid fa-robot"></i>
+                </div>
+                <div>
+                    <div class="text-xs text-slate-500 font-bold">الكمبيوتر</div>
+                    <div id="computer-score" class="text-2xl font-black text-slate-800">0</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Game Cards Container -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 mb-8">
+            
+            <!-- Rock Card -->
+            <button onclick="playRound('rock')" class="choice-btn btn-rock rounded-3xl p-6 md:p-8 flex flex-col items-center justify-center group focus:outline-none">
+                <div class="w-24 h-24 md:w-32 md:h-32 flex items-center justify-center text-white text-6xl md:text-7xl drop-shadow-md transition-transform group-hover:scale-110">
+                    <i class="fa-solid fa-hand-back-fist"></i>
+                </div>
+                <span class="mt-4 text-white font-black text-xl md:text-2xl tracking-wider drop-shadow">حجر</span>
+            </button>
+
+            <!-- Paper Card -->
+            <button onclick="playRound('paper')" class="choice-btn btn-paper rounded-3xl p-6 md:p-8 flex flex-col items-center justify-center group focus:outline-none">
+                <div class="w-24 h-24 md:w-32 md:h-32 flex items-center justify-center text-white text-6xl md:text-7xl drop-shadow-md transition-transform group-hover:scale-110">
+                    <i class="fa-solid fa-hand"></i>
+                </div>
+                <span class="mt-4 text-white font-black text-xl md:text-2xl tracking-wider drop-shadow">ورقة</span>
+            </button>
+
+            <!-- Scissors Card -->
+            <button onclick="playRound('scissors')" class="choice-btn btn-scissors rounded-3xl p-6 md:p-8 flex flex-col items-center justify-center group focus:outline-none">
+                <div class="w-24 h-24 md:w-32 md:h-32 flex items-center justify-center text-white text-6xl md:text-7xl drop-shadow-md transition-transform group-hover:scale-110">
+                    <i class="fa-solid fa-hand-scissors"></i>
+                </div>
+                <span class="mt-4 text-white font-black text-xl md:text-2xl tracking-wider drop-shadow">مقص</span>
+            </button>
+
+        </div>
+
+        <!-- Result Display Banner -->
+        <div class="bg-white/90 backdrop-blur-md rounded-2xl p-4 md:p-6 text-center border-2 border-sky-200 shadow-md min-h-[110px] flex flex-col items-center justify-center">
+            <div id="status-text" class="text-sky-900 font-bold text-lg md:text-xl">
+                اضغط على إحدى البطاقات للبدء!
+            </div>
+            
+            <!-- Show Choices comparison after selection -->
+            <div id="choices-summary" class="hidden mt-2 flex items-center justify-center gap-6 text-sm font-semibold text-slate-600">
+                <div>اختيارك: <span id="player-choice-text" class="font-bold text-sky-700"></span></div>
+                <div class="text-xl">⚡</div>
+                <div>اختيار الكمبيوتر: <span id="computer-choice-text" class="font-bold text-sky-700"></span></div>
+            </div>
+        </div>
+
+        <!-- Footer Control Buttons -->
+        <div class="mt-6 flex justify-center">
+            <button onclick="resetGame()" class="flex items-center gap-2 bg-slate-200 hover:bg-slate-300 text-slate-700 font-bold py-2 px-6 rounded-full transition-all text-sm shadow-sm active:scale-95">
+                <i class="fa-solid fa-rotate-right"></i>
+                إعادة ضبط النتيجة
+            </button>
+        </div>
+
+    </div>
+
+    <!-- JavaScript Game Logic -->
+    <script>
+        // Game Scores
+        let playerScore = 0;
+        let computerScore = 0;
+        let tiesScore = 0;
+        let isProcessing = false;
+
+        // Elements
+        const playerScoreEl = document.getElementById('player-score');
+        const computerScoreEl = document.getElementById('computer-score');
+        const tiesScoreEl = document.getElementById('ties-score');
+        const statusText = document.getElementById('status-text');
+        const choicesSummary = document.getElementById('choices-summary');
+        const playerChoiceText = document.getElementById('player-choice-text');
+        const computerChoiceText = document.getElementById('computer-choice-text');
+
+        // Arabic translations & icons mapping
+        const choicesData = {
+            rock: { name: 'حجر', icon: 'fa-hand-back-fist', color: 'text-orange-500' },
+            paper: { name: 'ورقة', icon: 'fa-hand', color: 'text-cyan-500' },
+            scissors: { name: 'مقص', icon: 'fa-hand-scissors', color: 'text-amber-500' }
+        };
+
+        // Main game logic execution
+        function playRound(playerChoice) {
+            if (isProcessing) return;
+            isProcessing = true;
+
+            // Hide summary during calculation
+            choicesSummary.classList.add('hidden');
+            
+            // Animation phase (Computer thinking)
+            statusText.className = "text-sky-700 font-bold text-lg md:text-xl thinking-anim";
+            statusText.innerHTML = '<i class="fa-solid fa-spinner fa-spin ml-2"></i> جاري التفكير واختيار الكمبيوتر...';
+
+            setTimeout(() => {
+                // Generate computer choice
+                const choices = ['rock', 'paper', 'scissors'];
+                const computerChoice = choices[Math.floor(Math.random() * choices.length)];
+
+                // Calculate Winner
+                let result = '';
+                if (playerChoice === computerChoice) {
+                    result = 'tie';
+                    tiesScore++;
+                } else if (
+                    (playerChoice === 'rock' && computerChoice === 'scissors') ||
+                    (playerChoice === 'paper' && computerChoice === 'rock') ||
+                    (playerChoice === 'scissors' && computerChoice === 'paper')
+                ) {
+                    result = 'win';
+                    playerScore++;
+                } else {
+                    result = 'lose';
+                    computerScore++;
+                }
+
+                // Update UI Scores
+                playerScoreEl.textContent = playerScore;
+                computerScoreEl.textContent = computerScore;
+                tiesScoreEl.textContent = tiesScore;
+
+                // Render Results
+                renderResult(result, playerChoice, computerChoice);
+                isProcessing = false;
+            }, 600);
+        }
+
+        // Render result text and styling
+        function renderResult(result, playerChoice, computerChoice) {
+            statusText.classList.remove('thinking-anim');
+            
+            if (result === 'win') {
+                statusText.className = "text-emerald-600 font-black text-xl md:text-2xl animate-bounce";
+                statusText.innerHTML = '🎉 مبروك! لقد فزت في هذه الجولة!';
+            } else if (result === 'lose') {
+                statusText.className = "text-rose-600 font-black text-xl md:text-2xl";
+                statusText.innerHTML = '❌ للأسف! فاز الكمبيوتر في هذه الجولة.';
+            } else {
+                statusText.className = "text-amber-600 font-black text-xl md:text-2xl";
+                statusText.innerHTML = '🤝 تعادل! اختيارات متطابقة.';
+            }
+
+            // Display choices summary
+            playerChoiceText.textContent = choicesData[playerChoice].name;
+            computerChoiceText.textContent = choicesData[computerChoice].name;
+            choicesSummary.classList.remove('hidden');
+        }
+
+        // Reset game stats
+        function resetGame() {
+            playerScore = 0;
+            computerScore = 0;
+            tiesScore = 0;
+
+            playerScoreEl.textContent = '0';
+            computerScoreEl.textContent = '0';
+            tiesScoreEl.textContent = '0';
+
+            statusText.className = "text-sky-900 font-bold text-lg md:text-xl";
+            statusText.textContent = 'تم إعادة الضبط! اختر إحدى البطاقات للبدء.';
+            choicesSummary.classList.add('hidden');
+        }
+    </script>
+</body>
+</html>
