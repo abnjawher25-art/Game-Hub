@@ -9,7 +9,7 @@
 body {
     background-image: url("../../../img/cards.jpg");
     background-size:cover;
-
+    margin: 0 auto;
     height: 100vh;
     display: flex;
     justify-content: center;

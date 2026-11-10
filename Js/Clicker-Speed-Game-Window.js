@@ -3,7 +3,7 @@
   const START_SECONDS = 60; // 2 دقائق
   const TIME_DECREASE = 32; // ينقص 32 ثانية في كل مستوى
   const BASE_CLICKS = 250; // نقرات المستوى الأول
-  const CLICKS_INCREASE = 20;
+  const CLICKS_INCREASE = 5;
 
   let clicks = 0;
   let level = 1;

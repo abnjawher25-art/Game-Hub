@@ -11,7 +11,8 @@ img {
 body {
   background-image: url("../../img/Background.png");
   display: block;
-  width: 92%;
+  width: 90%;
+  margin: 0 auto;
 }
 
 
@@ -21,7 +22,7 @@ header {
  justify-content: flex-start;
  align-items: center;
  align-content: flex-start;
- padding-left: 5px;
+ /* padding-left: 5px; */
 }
 
 
@@ -119,7 +120,7 @@ header h2 span {
   flex-direction: column;
   text-align: center;
   font-size: 28px;
-  filter: blur(3px);
+  /* filter: blur(3px); */
   transition: 0.5s;
 }
 

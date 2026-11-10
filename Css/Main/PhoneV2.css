@@ -12,6 +12,7 @@ body {
   background-image: url("../../img/Background.png");
   display: block;
   width: 92%;
+  margin: 0 auto;
 }
 
 
